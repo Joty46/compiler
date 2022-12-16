@@ -1,0 +1,136 @@
+mul
+<<
+purno a , b , c;
+**this is for comment**
+in(c);
+out("fortakinginput:");
+out(c);
+out(/);
+a:=5;
+b:=6;
+c:= biyog a ;
+out("-a:");
+out(c);
+out(/);
+c:=a pp;
+out("a++:");
+out(c);
+out(/);
+c:= a mm;
+out("a--:");
+out(c);
+out(/);
+c:= a jog b;
+out("a+b:");
+out(c);
+out(/);
+c:= a biyog b;
+out("a-b:");
+out(c);
+out(/);
+c:= a gun b;
+out("a*b:");
+out(c);
+out(/);
+c:= b vag a;
+out("a/b:");
+out(c);
+out(/);
+c:= b mod a;
+out("a%b:");
+out(c);
+out(/);
+c:= a pow b;
+out("a^b:");
+out(c);
+out(/);
+c:= a lt b;
+out("a<b:");
+out(c);
+out(/);
+c:= a lte b;
+out("a<=b:");
+out(c);
+out(/);
+c:= a gt b;
+out("a>b:");
+out(c);
+out(/);
+c:= a gte b;
+out("a>=b:");
+out(c);
+out(/);
+out("sinOf30:");
+out(sin(30));
+out(/);
+out("cosOf30:");
+out(cos(30));
+out(/);
+out("tanOf30:");
+out(tan(30));
+out(/);
+out("logOf30:");
+out(log(30));
+out(/);
+out("lnOf30:");
+out(ln(30));
+out(/);
+out("sqrtOf30");
+out(sqr(30));
+out(/);
+c:= a :== b;
+out("checkIfa&bEqual:");
+out(c);
+out(/);
+c:= a !:= b;
+out("checkIfa&bNotEqual:");
+out(c);
+out(/);
+c:= a and b;
+out("a&b:");
+out(c);
+out(/);
+c:= a or b;
+out("a|b:");
+out(c);
+out(/);
+c:= a xor b;
+out("aXorb:");
+out(c);
+out(/);
+c:= max(a,b);
+out("maximumOfa&b:");
+out(c);
+out(/);
+c:= min(a,b);
+out("minimumOfa&b:");
+out(c);
+out(/);
+c:= a fact;
+out("factorialOfa:");
+out(c);
+out(/);
+c:= not 1;
+out("notOf1:");
+out(c);
+out(/);
+jodi (a lt b )
+{
+    out(a);
+    out(/); 
+}
+jono (a :== b)
+{
+    out(a);
+    out(/);
+    out(b);
+    out(/);
+}
+noyto
+{
+    out(b);
+    out(/);
+}
+
+>>
+

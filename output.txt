@@ -1,0 +1,43 @@
+
+
+     -------Starting Program Execution-------
+
+
+
+**this is for comment**
+fortakinginput:0
+-a:-5
+a++:6
+a--:4
+a+b:11
+a-b:-1
+a*b:30
+a/b:1
+a%b:1
+a^b:15625
+a<b:1
+a<=b:1
+a>b:0
+a>=b:0
+sinOf30:-0.988032
+cosOf30:0.154251
+tanOf30:-6.405331
+logOf30:1.477121
+lnOf30:3.401197
+sqrtOf305.477226
+checkIfa&bEqual:0
+checkIfa&bNotEqual:1
+a&b:1
+a|b:1
+aXorb:3
+maximumOfa&b:6
+minimumOfa&b:5
+factorialOfa:120
+notOf1:0
+
+If block
+5
+5
+6
+6
+Compilation Successful!!!
