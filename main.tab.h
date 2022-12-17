@@ -74,26 +74,28 @@
      Fors = 290,
      Fore = 291,
      Movby = 292,
-     Pplus = 293,
-     Mminus = 294,
-     Lt = 295,
-     Lte = 296,
-     Gt = 297,
-     Gte = 298,
-     Ckeq = 299,
-     Noteq = 300,
-     Plus = 301,
-     Minus = 302,
-     Mul = 303,
-     Div = 304,
-     Mod = 305,
-     Max = 306,
-     Min = 307,
-     Comment = 308,
-     Greeq = 309,
-     Gre = 310,
-     Lesseq = 311,
-     Less = 312
+     Do = 293,
+     Until = 294,
+     Pplus = 295,
+     Mminus = 296,
+     Lt = 297,
+     Lte = 298,
+     Gt = 299,
+     Gte = 300,
+     Ckeq = 301,
+     Noteq = 302,
+     Plus = 303,
+     Minus = 304,
+     Mul = 305,
+     Div = 306,
+     Mod = 307,
+     Max = 308,
+     Min = 309,
+     Comment = 310,
+     Greeq = 311,
+     Gre = 312,
+     Lesseq = 313,
+     Less = 314
    };
 #endif
 
@@ -113,7 +115,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 117 "main.tab.h"
+#line 119 "main.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

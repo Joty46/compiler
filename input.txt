@@ -1,13 +1,16 @@
 mul
 <<
 purno a , b , c;
-**this is for comment**
+**---this is for comment---**
 in(c);
+**---this is for scanf---**
 out("fortakinginput:");
+**---this is for printf---**
 out(c);
 out(/);
 a:=5;
 b:=6;
+**---Different Operators---**
 c:= biyog a ;
 out("-a:");
 out(c);
@@ -114,10 +117,21 @@ c:= not 1;
 out("notOf1:");
 out(c);
 out(/);
+** -----conditional statement------- **
 jodi (a lt b )
 {
     out(a);
-    out(/); 
+    out(/);
+    jodi(a!:=0)
+    {
+        out("NestedIf:");
+        out(/);
+    }
+    noyto
+    {
+        out("NestedElse:");
+        out(/); 
+    } 
 }
 jono (a :== b)
 {
@@ -131,6 +145,18 @@ noyto
     out(b);
     out(/);
 }
+** -----For loop -----**
+forst < 0 > foren < 15 > step < 3 >
+{
+    out("helloWorld!");
+    out(/);
+}
 
+**----While loop:this decreaments by one works as reverse of for loop----**
+until <6> do
+{
+    out("helloWorld!");
+    out(/);
+}
 >>
 

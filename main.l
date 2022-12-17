@@ -17,9 +17,11 @@ extern FILE *yyout;
 "jodi"			{return If;}
 "jono"			{return Elif;}
 "noyto"			{return Else;}
-"ghuro"			{return Fors;}
-"thamo"			{return Fore;}
+"forst"			{return Fors;}
+"foren"			{return Fore;}
 "step"			{return Movby;}
+"do"			{return Do;}
+"until"			{return Until;}
 "change"		{return Switch;}
 "none"			{return Default;}
 "in"			{return Cin;}
@@ -65,7 +67,7 @@ extern FILE *yyout;
 "()" 						{}
 
 "\""(.)*"\"" {strcpy(yylval.s,yytext);return Str;}
-[,.:(){}\]\[]	 {return yytext[0];}
+[,.:<>(){}\]\[]	 {return yytext[0];}
 [ \t\n]					{}
 .										{printf("don't know\n", yytext);}
 

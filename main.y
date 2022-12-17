@@ -80,7 +80,7 @@
 %token Cin Cout
 %token Not And Xor Or Fact Sin Cos Tan Sqrt Log Ln Pow
 %token If Elif Else Switch Default Case Eq
-%token Fors Fore Movby 
+%token Fors Fore Movby Do Until
 %token Pplus Mminus Lt Lte Gt Gte Ckeq Noteq Plus Minus Mul Div Mod
 %token Max Min Comment
 
@@ -108,8 +108,8 @@
 					|statement input Eol {}
 					|statement output Eol {}
 				    |statement ifstatement {}
-					// |loop {}
-					// |funcinit {}
+					|statement loop {}
+				    |statement function {}
 					// |funccall {}
 					|statement expr Eol {}
 					;
@@ -301,7 +301,6 @@
 	//For conditional statement
 	ifstatement: If '(' ifexpr ')' '{' statement '}' elseif
 						{
-
 							ifdone[ifptr] = 0;
 							ifptr--;
 						}
@@ -311,8 +310,12 @@
 							ifptr++;
 							ifdone[ifptr] = 0;
 							if($1){
-								printf("\nIf block\n");
+								printf("\nIf block:True\n");
 								ifdone[ifptr] = 1;
+							}
+							else
+							{
+								printf("\nIf block:False\n");
 							}
 						}
 				;
@@ -320,20 +323,52 @@
 				| elseif Elif '(' expr ')' '{' statement '}'
 						{
 							if($4 && ifdone[ifptr] == 0){
-								printf("\nElse if block\n");
+								printf("\nElse if block:True\n");
 								ifdone[ifptr] = 1;
+							}
+							else
+							{
+								printf("\nElse if block:False\n");
 							}
 						}
 				| elseif Else '{' statement '}'
 						{
 							if(ifdone[ifptr] == 0){
-								printf("\nElse block\n");
+								printf("\nElse block:True\n");
 								ifdone[ifptr] = 1;
+							}
+							else
+							{
+								printf("\nElse block:False\n");
 							}
 						}
 
 				;
-
+	loop :		Fors '<' expr '>' Fore '<' expr '>' Movby '<' expr '>' '{' statement '}'	
+					{
+						int srt = $3;
+						int end = $7;
+						int diff = $11;
+						int cnt = 0;
+						int i = 0;
+						for(i = srt; i <= end; i += diff){
+							cnt++;
+							printf("Step no : %d\n",i);
+						}	
+						printf("\nLoop has turned around %d times\n",cnt);
+					}
+				|Until '<' expr '>' Do '{' statement '}'
+					{
+						int i=0;
+						int cnt = 0;
+						for(i=$3;i>0;i--)
+						{
+							cnt++;
+							printf("Step no :%d\n",i);
+						}
+						printf("\nLoop has turned around %d times\n",cnt);
+					}
+				;
 		
 
 %%

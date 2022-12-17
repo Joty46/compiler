@@ -4,8 +4,14 @@
 
 
 
-**this is for comment**
-fortakinginput:0
+**---this is for comment---**
+
+**---this is for scanf---**
+fortakinginput:
+**---this is for printf---**
+0
+
+**---Different Operators---**
 -a:-5
 a++:6
 a--:4
@@ -35,9 +41,43 @@ minimumOfa&b:5
 factorialOfa:120
 notOf1:0
 
-If block
+** -----conditional statement------- **
+
+If block:True
 5
+
+If block:True
+NestedIf:
+NestedElse:
+
+Else block:False
 5
 6
+
+Else if block:False
 6
+
+Else block:False
+
+** -----For loop -----**
+helloWorld!
+Step no : 0
+Step no : 3
+Step no : 6
+Step no : 9
+Step no : 12
+Step no : 15
+
+Loop has turned around 6 times
+
+**----While loop:this decreaments by one works as reverse of for loop----**
+helloWorld!
+Step no :6
+Step no :5
+Step no :4
+Step no :3
+Step no :2
+Step no :1
+
+Loop has turned around 6 times
 Compilation Successful!!!
