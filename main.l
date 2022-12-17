@@ -59,8 +59,10 @@ extern FILE *yyout;
 ">>"			{return End;}
 "**"[^*]+"**"	{printf("\n%s\n",yytext);}
 "/"				{return Nl;}
-"init" 				{}
-"call"					{}
+"lsg"			{return Lcm;}
+"gsg"			{return Gcd;}
+"->"			{return Append;}
+"swp"			{return Swap;}
 [-]?[0-9]+[.]?[0-9]*	{yylval.i = atoi(yytext);
 						return Num; }
 [a-zA-z0-9]+	{ strcpy(yylval.s,yytext);return Id;}

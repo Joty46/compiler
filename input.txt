@@ -120,8 +120,7 @@ out(/);
 ** -----conditional statement------- **
 jodi (a lt b )
 {
-    out(a);
-    out(/);
+    c:=a;
     jodi(a!:=0)
     {
         out("NestedIf:");
@@ -135,15 +134,11 @@ jodi (a lt b )
 }
 jono (a :== b)
 {
-    out(a);
-    out(/);
-    out(b);
-    out(/);
+    c:= a jog b;
 }
 noyto
 {
-    out(b);
-    out(/);
+    c:=b;
 }
 ** -----For loop -----**
 forst < 0 > foren < 15 > step < 3 >
@@ -157,6 +152,42 @@ until <6> do
 {
     out("helloWorld!");
     out(/);
+}
+**---Function---**
+a -> lsg ( b );
+a->gsg(b);
+a->swp(b);
+out("valueOfa:");
+out(a);
+out(/);
+out("valueOfb:");
+out(b);
+out(/);
+c:=3;
+**---Switch statement---**
+change (c)
+{
+    
+    none :
+    {
+        c:=0;
+    }
+     case 4:
+    {
+        c:=4;
+    }
+     case 3:
+    {
+        c:=3;
+    }
+    case 2 :
+    {
+        c:=2;
+    }
+    case 1 :
+    {
+        c:=1;
+    }
 }
 >>
 

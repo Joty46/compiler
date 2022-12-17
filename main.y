@@ -13,7 +13,35 @@
     int vptr = 0;
     int val[1000];
     char variables[1000][1000];
-
+	void lcm(int a,int b)
+	{
+		int c=fmax(a,b);
+		while(1)
+		{
+			if(c%a==0 && c%b==0)
+			{
+				printf("LCM of %d & %d is %d\n",a,b,c);
+				break;
+			}
+			c++;
+		}
+	}
+	void gcd(int a,int b)
+	{
+		int gcd;
+		for(int i=1; i <= a && i <= b; ++i)
+		{
+			if(a%i==0 && b%i==0)
+				gcd = i;
+		}
+    	printf("GCD of %d & %d is %d\n", a, b, gcd);
+	}
+	void swap(int *x,int *y)
+	{
+		int temp = *x;
+		*x = *y;
+		*y = temp;
+	}
     int ifExists(char str[]){//check if a variable already exists
         int i;
         for(i = 0; i < vptr; i++){
@@ -54,7 +82,7 @@
 
     }
 	int swdone = 0;
-	int swvar;
+	double swvar;
 
 	int ifvar[1000];
 	int ifptr = -1;
@@ -83,14 +111,20 @@
 %token Fors Fore Movby Do Until
 %token Pplus Mminus Lt Lte Gt Gte Ckeq Noteq Plus Minus Mul Div Mod
 %token Max Min Comment
+%token Gcd Lcm Append Swap
+
 
 %nonassoc Elif 
 %nonassoc Else
+%left Default
+%left Case
 
 
 
 %left Eq Ckeq Noteq Less Lesseq Gre Greeq
-%left Plus Minus Mul Div Pow Mod
+%left Plus Minus 
+%left Mul Div 
+%left Pow Mod
 %left Pplus Mminus
 %left And Or Xor Not
 %left Log Ln Sqrt 
@@ -109,8 +143,8 @@
 					|statement output Eol {}
 				    |statement ifstatement {}
 					|statement loop {}
-				    |statement function {}
-					// |funccall {}
+				   	|statement function Eol {}
+				    |statement switchstmnt {}
 					|statement expr Eol {}
 					;
 	//declartion
@@ -368,6 +402,60 @@
 						}
 						printf("\nLoop has turned around %d times\n",cnt);
 					}
+				;
+	//For built in functions
+	function:	expr Append Lcm '(' expr ')' 
+					{
+						lcm($1,$5);
+					}
+				|expr Append Gcd '(' expr ')'
+					{
+						gcd($1,$5);
+					}
+				|expr Append Swap '(' expr ')'
+					{
+						int a=(int)$1;
+						int b=(int)$5;
+						swap(&a,&b);
+						$1=a;
+						$5=b;
+					}
+				;
+	//For Switch Statements
+	switchstmnt	: Switch '(' exprswch ')' '{' cases '}' 
+				;
+
+	exprswch 	:  expr
+					{
+						swdone = 0;
+						swvar = $1;
+					}
+			;
+
+
+	cases	: 	/* empty */
+				|Default ':' '{' statement '}' cases
+					{
+						if(swdone == 0){
+							swdone = 1;
+							printf("Default Case is True\n");
+						}
+						else
+						{
+							printf("Default Case is False\n");
+						}
+					}
+				|Case expr ':' '{' statement '}' cases
+				{
+					if($2 == swvar){
+						printf("Case :%d is True\n",(int)$2);
+						swdone = 1;
+					}
+					else
+					{
+						printf("Case :%d is False\n",(int)$2);
+					}					
+				}
 				;
 		
 

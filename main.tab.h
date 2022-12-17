@@ -92,10 +92,14 @@
      Max = 308,
      Min = 309,
      Comment = 310,
-     Greeq = 311,
-     Gre = 312,
-     Lesseq = 313,
-     Less = 314
+     Gcd = 311,
+     Lcm = 312,
+     Append = 313,
+     Swap = 314,
+     Greeq = 315,
+     Gre = 316,
+     Lesseq = 317,
+     Less = 318
    };
 #endif
 
@@ -106,7 +110,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 66 "main.y"
+#line 94 "main.y"
 
 	int i;
 	double d;
@@ -115,7 +119,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 119 "main.tab.h"
+#line 123 "main.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

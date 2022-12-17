@@ -44,18 +44,14 @@ notOf1:0
 ** -----conditional statement------- **
 
 If block:True
-5
 
 If block:True
 NestedIf:
 NestedElse:
 
 Else block:False
-5
-6
 
 Else if block:False
-6
 
 Else block:False
 
@@ -80,4 +76,17 @@ Step no :2
 Step no :1
 
 Loop has turned around 6 times
+
+**---Function---**
+LCM of 5 & 6 is 30
+GCD of 5 & 6 is 1
+valueOfa:5
+valueOfb:6
+
+**---Switch statement---**
+Case :1 is False
+Case :2 is False
+Case :3 is True
+Case :4 is False
+Default Case is False
 Compilation Successful!!!
